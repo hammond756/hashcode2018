@@ -19,11 +19,12 @@ def loadCsv (file):
 		rides.append(ride)
 		i += 1
 
-	print(scenario)
-	print(len(rides))
-	for ride in rides:
-		print(ride)
-
 	return scenario,rides
 
-loadCsv('data/a_example.in')
+
+# example
+# loadCsv('data/a_example.in')
+# print(scenario)
+# print(len(rides))
+# for ride in rides:
+# 	print(ride)
