@@ -2,7 +2,7 @@ from Car import Car
 
 def writeOutput(cars, input_file):
 
-	output_file = input_file.split(".")[0] + "_answers.in"
+	output_file = "data/" + input_file.split(".")[0] + "_answers.out"
 	f = open(output_file, 'w')
 	for car in cars:
 		f.write("{}".format(len(car.schedule)))
