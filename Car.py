@@ -10,14 +10,18 @@ class Car:
         self.schedule = []
 
     def assign(self, ride):
-        if not self.willEndInTime(ride):
-            return False
-
         self.row, self.col, self.t = ride.endRow, ride.endCol, (self.t + self.travelTime(ride))
         self.schedule.append(ride.id)
 
     def willEndInTime(self, ride):
-        return self.t + self.timeToTravelToRideStart(ride) + len(ride) <= ride.start
+        # print("Ride length: {}, Car Position: ({},{}), Ride Position ({},{}), Dest ({},{})".format(len(ride),
+        #                                                                                            self.row,
+        #                                                                                            self.col,
+        #                                                                                            ride.startRow,
+        #                                                                                            ride.startCol,
+        #                                                                                            ride.endRow,
+        #                                                                                            ride.endCol))
+        return self.t + self.timeToTravelToRideStart(ride) + len(ride) <= ride.end
 
     def willEarnBonus(self, ride):
         return self.t + self.timeToTravelToRideStart(ride) < ride.start
