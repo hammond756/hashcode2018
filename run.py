@@ -4,6 +4,7 @@ from loadRides import loadCsv
 from Car import Car
 from Scenario import Scenario
 import os
+from writeOutput import writeOutput
 
 # filename = 'b_should_be_easy.in'
 # filename = 'c_no_hurry.in'
@@ -30,5 +31,4 @@ for ride in rides:
 
     car.assign(ride)
 
-for car in cars:
-    print(car.schedule)
+writeOutput(cars, filename)

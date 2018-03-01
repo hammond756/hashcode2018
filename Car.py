@@ -24,7 +24,7 @@ class Car:
         return self.t + self.timeToTravelToRideStart(ride) + len(ride) <= ride.end
 
     def willEarnBonus(self, ride):
-        return self.t + self.timeToTravelToRideStart(ride) < ride.start
+        return self.t + self.timeToTravelToRideStart(ride) <= ride.start
 
     def travelTime(self, ride):
         return max(self.timeToTravelToRideStart(ride), (ride.start - self.t)) + len(ride)
