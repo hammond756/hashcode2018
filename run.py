@@ -12,7 +12,7 @@ for filename in ['a_example.in', 'b_should_be_easy.in', 'c_no_hurry.in', 'd_metr
     scenario, rides = loadCsv(os.path.join('data', filename))
     cars = [Car(i) for i in range(scenario.cars)]
 
-    rides = sorted(rides, key=lambda x: x.start)
+    rides = sorted(rides, key=lambda x: (x.start, len(x)))
 
     print(scenario)
 
