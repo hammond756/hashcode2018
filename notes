@@ -1,0 +1,9 @@
+Evaluation:
+    score = 0
+    if drop_time <= end_time
+        score += travel_time
+
+        if picku_time = start_time
+            score += bonus
+
+    return score
